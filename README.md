@@ -1,6 +1,6 @@
 # cronometro
 
-Intrgrantes
+Integrantes:
 
 - Juan Pablo Perea Hernandez 20162020074
 
