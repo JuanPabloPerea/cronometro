@@ -31,8 +31,7 @@ def iniciar(decsegundo=0):
         minuto = 0
         hora = hora + 1
  
-    # hacemos un llamamient a la funcion mostrarContador pasando el
-    # contador mas uno
+    # hacemos un llamamiento a la funcion pasando el descsegundo mas uno
     proceso=time.after(1, iniciar, (decsegundo+1))
  
 def parar():
