@@ -34,7 +34,7 @@ def iniciar(decsegundo=0):
  
     # hacemos un llamamient a la funcion  pasando el
     # decsegundo mas uno
-    proceso=time.after(1, iniciar, decsegundo+1))
+    proceso=time.after(1, iniciar, (decsegundo+1))
  
 def parar():
     
@@ -49,8 +49,8 @@ interface = Tk()
 interface.title('Cronometro')
 
  
-lbl = Label(root, fg='red', width=20, font=("","18"))
-lbl.pack()
+time = Label(root, fg='red', width=20, font=("","18"))
+time.pack()
  
 # Generamos un frame para poner los botones de iniciar y parar
 frame=Frame(interface)
