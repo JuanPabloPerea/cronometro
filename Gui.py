@@ -5,7 +5,7 @@ segundos = 0
 minutos = 0
 horas = 0
 
-def iniciar(contador=0):
+def iniciar(decsegundo=0):
     
     
     global proceso
@@ -13,8 +13,8 @@ def iniciar(contador=0):
     global minutos
     global horas
  
-    # mostramos la variable contandor
-    time['text'] = str(horas) + ":" + str(minutos) + ":" + str(segundos) + ":" + str(contador)
+    # mostramos la variable decsegundo
+    time['text'] = str(horas) + ":" + str(minutos) + ":" + str(segundos) + ":" + str(decsegundo)
 
     if(contador == 100):
 
@@ -32,9 +32,9 @@ def iniciar(contador=0):
         minutos = 0
         horas = horas + 1
  
-    # hacemos un llamamient a la funcion mostrarContador pasando el
-    # contador mas uno
-    proceso=time.after(1, iniciar, (contador+1))
+    # hacemos un llamamient a la funcion  pasando el
+    # decsegundo mas uno
+    proceso=time.after(1, iniciar, decsegundo+1))
  
 def parar():
     
@@ -45,24 +45,20 @@ def parar():
     
     time.after_cancel(proceso)
  
-root = Tk()
-root.title('Cronometro')
+interface = Tk()
+interface.title('Cronometro')
 
  
-time = Label(root, fg='red', width=20, font=("","18"))
-time.pack()
- 
-# si queremos que se autoejecuta al iniciar el programa hay que desomentar
-# esta linea y comentar los botones
-#iniciar()
+lbl = Label(root, fg='red', width=20, font=("","18"))
+lbl.pack()
  
 # Generamos un frame para poner los botones de iniciar y parar
-frame=Frame(root)
+frame=Frame(interface)
 btnIniciar=Button(frame, fg='blue', text='Iniciar', command=iniciar)
 btnIniciar.grid(row=1, column=1)
 btnParar=Button(frame, fg='blue', text='Parar', command=parar)
 btnParar.grid(row=1, column=2)
 frame.pack()
  
-root.mainloop()
+interface.mainloop()
 
