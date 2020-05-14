@@ -1,46 +1,46 @@
 from tkinter import Tk,Label,Button,Frame
  
 proceso=0
-segundos = 0
-minutos = 0
-horas = 0
+segundo = 0
+minuto  = 0
+hora = 0
 
-def iniciar(contador=0):
+def iniciar(decsegundo=0):
     
     global proceso
-    global segundos
-    global minutos
-    global horas
+    global segundo
+    global minuto
+    global hora
  
     # mostramos la variable contandor
-    time['text'] = str(horas) + ":" + str(minutos) + ":" + str(segundos) + ":" + str(contador)
+    time['text'] = str(hora) + ":" + str(minuto) + ":" + str(segundo) + ":" + str(decsegundo)
 
-    if(contador == 100):
+    if(decsegundo == 100):
 
-        contador = 0
-        segundos = segundos + 1
+        decsegundo = 0
+        segundo = segundo + 1
 
-    if(segundos == 60):
+    if(segundo == 60):
 
-        segundos = 0
-        minutos = minutos + 1
+        segundo = 0
+        minuto = minuto + 1
     
 
-    if(minutos == 60):
+    if(minuto == 60):
 
-        minutos = 0
-        horas = horas + 1
+        minuto = 0
+        hora = hora + 1
  
     # hacemos un llamamient a la funcion mostrarContador pasando el
     # contador mas uno
-    proceso=time.after(1, iniciar, (contador+1))
+    proceso=time.after(1, iniciar, (decsegundo+1))
  
 def parar():
     
     global proceso
-    global segundos
-    global minutos
-    global horas
+    global segundo
+    global minuto
+    global hora
     
     time.after_cancel(proceso)
  
